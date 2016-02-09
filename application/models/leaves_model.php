@@ -214,7 +214,7 @@ class Leaves_model extends CI_Model {
      */
     public function getSumEntitledDays($employee, $contract, $refDate) {
         $this->db->select('types.id as type_id, types.name as type_name');
-        $this->db->select('SUM(entitleddays.days) as entitled');
+        $this->db->select('SUM(hr__entitleddays.days) as entitled');
         $this->db->select('MIN(startdate) as min_date');
         $this->db->select('MAX(enddate) as max_date');
         $this->db->from('entitleddays');
@@ -222,8 +222,8 @@ class Leaves_model extends CI_Model {
         $this->db->group_by('types.id');
         $this->db->where('entitleddays.startdate <= ', $refDate);
         $this->db->where('entitleddays.enddate >= ', $refDate);
-        $where = ' (entitleddays.contract=' . $contract . 
-                       ' OR entitleddays.employee=' . $employee . ')';
+        $where = ' (hr__entitleddays.contract=' . $contract .
+                       ' OR hr__entitleddays.employee=' . $employee . ')';
         $this->db->where($where, NULL, FALSE);   //Not very safe, but can't do otherwise
         $results = $this->db->get()->result_array();
         //Create an associated array have the leave type as key
