@@ -262,7 +262,7 @@ class Leaves_model extends CI_Model {
             
             foreach ($entitlements as $entitlement) {
                 //Get the total of taken leaves grouped by type
-                $this->db->select('SUM(leaves.duration) as taken, types.name as type');
+                $this->db->select('SUM(hr__leaves.duration) as taken, types.name as type');
                 $this->db->from('leaves');
                 $this->db->join('types', 'types.id = leaves.type');
                 $this->db->where('leaves.employee', $id);
