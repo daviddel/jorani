@@ -297,7 +297,7 @@ class Leaves_model extends CI_Model {
                 }
                 $sum += (float) $entitled['duration']; //entitled
             }
-            $this->db->select('sum(leaves.duration) as taken');
+            $this->db->select('sum(hr__leaves.duration) as taken');
             $this->db->from('leaves');
             $this->db->where('leaves.employee', $id);
             $this->db->where('leaves.status', 3);
