@@ -76,7 +76,7 @@ class Organization_model extends CI_Model {
      */
     public function getAllChildren($id) {
         $query = 'SELECT GetFamilyTree(id) as id' .
-                    ' FROM organization' .
+                    ' FROM hr__organization' .
                     ' WHERE id =' . $id;
         $query = $this->db->query($query); 
         $arr = $query->result_array();
@@ -275,7 +275,7 @@ class Organization_model extends CI_Model {
      * @author Benjamin BALET <benjamin.balet@gmail.com>
      */
     public function getSupervisor($entity) {
-        $this->db->select('users.id, CONCAT(users.firstname, \' \', users.lastname) as username, email', FALSE);
+        $this->db->select('users.id, CONCAT(hr__users.firstname, \' \', hr__users.lastname) as username, email', FALSE);
         $this->db->from('organization');
         $this->db->join('users', 'users.id = organization.supervisor');
         $this->db->where('organization.id', $entity);

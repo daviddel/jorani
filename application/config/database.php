@@ -48,12 +48,12 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'lms';
+$db['default']['hostname'] = 'mysql';
+$db['default']['username'] = 'kozikaza';
+$db['default']['password'] = 'kozikaza';
+$db['default']['database'] = 'kozikaza_stats';
 $db['default']['dbdriver'] = 'mysqli';
-$db['default']['dbprefix'] = '';
+$db['default']['dbprefix'] = 'hr__';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
 $db['default']['cache_on'] = FALSE;

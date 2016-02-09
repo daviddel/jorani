@@ -69,7 +69,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'french';
 
 /*
 |--------------------------------------------------------------------------
@@ -381,9 +381,9 @@ $config['proxy_ips'] = '';
 
 //____________________________________________________________________________
 //default email from
-$config['from_mail'] = 'do.not@reply.me';
-$config['from_name'] = 'Jorani';
-$config['subject_prefix'] = '[Jorani] ';
+$config['from_mail'] = 'noreply@hr.kozikaza.com';
+$config['from_name'] = 'HR Kozikaza';
+$config['subject_prefix'] = '[HR] ';
 
 //____________________________________________________________________________
 //User management
@@ -461,7 +461,7 @@ $config['ldap_basedn_db'] = FALSE;      //It TRUE, ldap path is taken from user 
 
 //____________________________________________________________________________
 //Oauth2 configuration
-$config['oauth2_enabled'] = FALSE;
+$config['oauth2_enabled'] = TRUE;
 $config['oauth2_provider'] = 'google';   //Supported providers: google
 $config['oauth2_client_id'] = '';
 $config['oauth2_client_secret'] = '';
