@@ -600,7 +600,7 @@ class Leaves_model extends CI_Model {
         $this->db->join('users', 'users.id = leaves.employee');
         $this->db->where('users.manager', $user_id);
         $this->db->where('leaves.status != ', 4);       //Exclude rejected requests
-        $this->db->where('(leaves.startdate <= DATE(' . $this->db->escape($end) . ') AND leaves.enddate >= DATE(' . $this->db->escape($start) . '))');
+        $this->db->where('(hr__leaves.startdate <= DATE(' . $this->db->escape($end) . ') AND hr__leaves.enddate >= DATE(' . $this->db->escape($start) . '))');
         $this->db->order_by('startdate', 'desc');
         $this->db->limit(1024);  //Security limit
         $events = $this->db->get('leaves')->result();
