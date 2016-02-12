@@ -314,6 +314,7 @@ class Leaves_model extends CI_Model {
             if (array_key_exists($compensate_name, $summary)) {
                 $summary[$compensate_name][''] = (float) $summary[$compensate_name][''] + $sum; //entitled
             }
+            print_r($summary);
             
             //Remove all lines having taken and entitled set to set to 0
             foreach ($summary as $key => $value) {
