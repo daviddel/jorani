@@ -95,7 +95,7 @@ $languages = $this->polyglot->nativelanguages($this->config->item('languages'));
                 <div class="span6" style="height:100%;">
                     <div class="row-fluid">
                         <div class="span12">
-                            <img src="<?php echo base_url();?>assets/images/logo_simple.png">
+                            <img src="<?php echo base_url();?>assets/images/kzkz_logo_big.png">
                         </div>
                     </div>
                     <div class="row-fluid"><div class="span12">&nbsp;</div></div>
