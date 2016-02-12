@@ -312,9 +312,11 @@ class Leaves_model extends CI_Model {
             }
             //Add the sum of validated catch up for the employee
             if (array_key_exists($compensate_name, $summary)) {
+                if (!isset($summary[$compensate_name][1])) {
+                    $summary[$compensate_name][1] = 0;
+                }
                 $summary[$compensate_name][1] = (float) $summary[$compensate_name][1] + $sum; //entitled
             }
-            print_r($summary);
             
             //Remove all lines having taken and entitled set to set to 0
             foreach ($summary as $key => $value) {
